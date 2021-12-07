@@ -17,23 +17,28 @@
        
         <div class="container">
             <header>welcome </header>
-            <form>
+            <div id="error_message"></div>
+            <form id="myform" name="form" onsubmit="return val()">
                 <div class="input-field">
-                    <input type="text" required>
-                    <label>Email or Username</label>
+                    <input type="text" id="name" required>
+                    <label>Username</label>
                 </div>
                 <div class="input-field">
-                    <input type="text" required>
+                    <input type="text" id="email" required>
+                    <label>Email </label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="pass" required>
                     <label>Password</label>
                 </div>
                 <div class="input-field">
-                    <input class="pswrd" type="password" required>
+                    <input class="pswrd" type="password" id="cpass" required>
                     <span class="show">SHOW</span>
                     <label>Confirm Password</label>
                 </div>
                 <div class="button">
                     <div class="inner"></div>
-                    <button>Sin Up</button>
+                    <button type="submit" value="submit" onclick="return val()">Sin Up</button>
                 </div>
             </form>
             <div class="auth">
@@ -55,7 +60,7 @@
             <img src="../Assets/images.png" />
         </div>
     </section>
-
+<script src="../javascript/SignUp.js"></script>
 </body>
 
 </html>
