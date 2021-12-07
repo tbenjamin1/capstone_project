@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700;900&display=swap");
+html,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 2;
+}
+.blog-section {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+h1 {
+  text-align: center;
+}
+h3 {
+  font-size: 15px;
+  margin-top: 0;
+  text-align: center;
+}
+p {
+  text-align: center;
+
+  font-size: 9px;
+}
+
+.sidebar {
+  background: rgb(243, 217, 236);
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  padding: 20px 0;
+  transition: all 0.5s ease;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #080808;
+}
+.items .item a {
+  margin-bottom: 1rem;
+  color: #080808;
+}
+.sidebar .profile {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar .profile img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.sidebar .profile h3 {
+  color: black;
+  margin: 10px 0 5px;
+}
+
+.sidebar .profile p {
+  color: black;
+  font-size: 14px;
+}
+.sidebar ul {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+.sidebar ul li a {
+  display: block;
+  padding: 13px 30px;
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar ul li a:hover {
+  display: block;
+  border-radius: 6px;
+  background: rgb(231, 109, 231);
+}
+.sidebar .socialmedia {
+  display: flex;
+}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 70%;
+    height: 100%;
+    position: relative;
+  }
+  .navigation {
+    width: 50%;
+  }
+  .sidebar .profile img {
+    width: 50px;
+    height: 50px;
+  }
+  .sidebar .profile h3 {
+    font-size: 13px;
+  }
+
+  .sidebar .profile p {
+    font-size: 10px;
+  }
+  .sidebar ul {
+    width: 50%;
+    display: flex;
+
+    justify-content: space-between;
+    justify-content: center;
+  }
+  .sidebar ul li a {
+    font-size: 12px;
+    margin-left: -1rem;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.blog-rght {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+}
+
+.bashboard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.bashboard-sumary {
+  width: 100%;
+  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  gap: 10px;
+}
+
+@media (max-width: 950px) {
+  .blog-rght {
+    margin-left: -2rem;
+  }
+  .left-side {
+    width: 80%;
+  }
+
+  .content .right-side {
+    width: 80%;
+  }
+}
+@media (max-width: 820px) {
+  .bashboard {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+  .bashboard-sumary {
+    width: 100%;
+    display: grid;
+
+    grid-template-columns: 100px 100px;
+    gap: 20px;
+  }
+  h1 {
+    font-size: 10px;
+  }
+
+  .content .left-side {
+    height: 70%;
+    width: 100%;
+  }
+}
+
+/* card */
+
+.card {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 8px 20px 0px rgba(12, 12, 12, 0.15);
+}
+
+/* .card {
+  margin: 5px;
+  display: flex;
+  box-shadow: 0px 8px 20px 0px rgba(14, 12, 12, 0.15);
+} */
+
+.card .card-body {
+  height: 4;
+}
+
+.contact-blog {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 820px) {
+  .card-container .card {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+form {
+  width: 15rem;
+  background-color: rgb(255, 226, 253);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
