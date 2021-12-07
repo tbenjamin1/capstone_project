@@ -18,6 +18,10 @@
         <div class="container">
             <header>welcome </header>
             <div id="error_message"></div>
+            <div id="success" class="suc">
+                <h2>Form has been validated successfully!</h2>
+            </div>
+                
             <form id="myform" name="form" onsubmit="return val()">
                 <div class="input-field">
                     <input type="text" id="name" required>
@@ -28,12 +32,12 @@
                     <label>Email </label>
                 </div>
                 <div class="input-field">
-                    <input type="text" id="pass" required>
+                    <input type="password"id="pass" required>
                     <label>Password</label>
                 </div>
                 <div class="input-field">
                     <input class="pswrd" type="password" id="cpass" required>
-                    <span class="show">SHOW</span>
+                    <!-- <span class="show">SHOW</span> -->
                     <label>Confirm Password</label>
                 </div>
                 <div class="button">

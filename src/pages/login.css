@@ -222,16 +222,3 @@ form .button {
 #success {
   display: none;
 }
-
-.creds {
-  background-color: #ffd151;
-  width: 100%;
-  height: 30px;
-  text-align: center;
-  padding: 10px;
-  text-transform: uppercase;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}

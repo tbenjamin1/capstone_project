@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <title>login|capstone</title>
+    <title>SignUp|capstone</title>
 </head>
 <body>
 
@@ -17,19 +17,24 @@
         </div>
 <div class="container">
     <header>welcome </header>
-    <form>
-        <div class="input-field">
-            <input type="text" required>
-            <label>Email or Username</label>
-        </div>
-        <div class="input-field">
-            <input class="pswrd" type="password" required>
-            <span class="show">SHOW</span>
-            <label>Password</label>
-        </div>
+<div id="error_message"></div>
+<div id="success" class="suc">
+    <h2>Form has been validated successfully!</h2>
+</div>
+    
+<form id="myform" name="form" onsubmit="return validate()">
+    <div class="input-field">
+        <input type="text" id="email" required>
+        <label>Email </label>
+    </div>
+<div class="input-field">
+    <input class="pswrd" type="password" id="pass" required>
+    <!-- <span class="show">SHOW</span> -->
+    <label> Password</label>
+</div>
         <div class="button">
             <div class="inner"></div>
-            <button>LOGIN</button>
+            <button type="submit" value="submit" onclick="return validate()">Sin Up</button>
         </div>
     </form>
     <div class="auth">
@@ -48,6 +53,8 @@
     </div>
 </div>
     </section>
+
+    <script src="../javascript/login.js"></script>
     
 </body>
 </html>
