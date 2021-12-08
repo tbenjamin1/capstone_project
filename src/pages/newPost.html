@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./newPost.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+    <title>new article||capstone</title>
+</head>
+
+<body>
+
+    <section class="section">
+
+
+        <div class="container">
+            <h2>Write arcticle </h2>
+            <div id="error_message"></div>
+            <div id="success" class="suc">
+                <h2>Form has been validated successfully!</h2>
+            </div>
+
+            <form id="myform" name="form" onsubmit="return val()">
+                <div class="field">
+
+
+
+
+
+
+
+                    <div class="input-field">
+                        <label>title</label>
+                        <input type="text" id="title" required>
+                        
+                    </div>
+                   
+                    <div class="input-field">
+                        <label>Arthur:</label>
+                        <input type="text" id="name" required>
+                        
+                    </div>
+                    <div class="input-field">
+                        <label>Date </label>
+                        <input type="date" id="date" required>
+                       
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <textarea class="textarea" type="text" id="textarea" placeholder="write article" required></textarea>
+                    <!-- <span class="show">SHOW</span> -->
+                    
+                </div>
+
+                <div class="">
+                    <div class="upload-image">
+                        <input type='file' class="imgInp" data-id='img1' />
+                    </div>
+                    <br>
+                    <img id="img1" src="https://i.imgur.com/zAyt4lX.jpg" alt="your image" height="100" />
+                
+                </div>
+               
+                <div class="">
+
+                    <button type="submit" value="submit" onclick="return val()">post</button>
+                </div>
+
+            </form>
+
+
+        </div>
+        <!-- <div class="container-left">
+            <img src="../Assets/images.png" />
+        </div> -->
+    </section>
+    <script src="./newpost.js"></script>
+
+
+</body>
+
+</html>

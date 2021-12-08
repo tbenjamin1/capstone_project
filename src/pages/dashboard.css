@@ -20,8 +20,7 @@ h3 {
 }
 p {
   text-align: center;
-
-  font-size: 9px;
+  font-size: 16px;
 }
 
 .sidebar {
@@ -219,6 +218,19 @@ p {
   padding: 10px;
   box-shadow: 0px 8px 20px 0px rgba(12, 12, 12, 0.15);
 }
+.card-summary {
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0px 8px 20px 0px rgba(12, 12, 12, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: pink;
+}
 
 /* .card {
   margin: 5px;
@@ -228,6 +240,7 @@ p {
 
 .card .card-body {
   height: 4;
+  font-weight: bold;
 }
 
 .contact-blog {
@@ -251,4 +264,28 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.button {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+}
+.upload-image input {
+  display: block !important;
+  width: 158px !important;
+  height: 45px !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+}
+.upload-image {
+  cursor: pointer;
+  width: 158px;
+  height: 45px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  /*background-color:#fff;*/
+  background-repeat: no-repeat;
+  background-image: url("http://icons.iconarchive.com/icons/martz90/circle/512/camera-icon.png");
+  background-size: 20px 20px;
 }
