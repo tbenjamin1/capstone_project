@@ -9,8 +9,14 @@ body {
   min-height: 100%;
   font-family: "Montserrat", sans-serif;
   padding-bottom: 8rem;
-  margin: -10px -10px 0 -10px;
+
   background-color: snow;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 article {
@@ -69,14 +75,25 @@ article {
 }
 
 footer {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #574355;
+  background: #887186;
   color: white;
   text-align: center;
+}
+textarea {
+  width: 20rem;
+  height: 4rem;
+}
+button {
+  background-color: snow;
+  border-radius: 5rem;
+  padding: 10px;
 }
 
 /* CSS Grid starts here! */
@@ -95,4 +112,46 @@ footer {
   grid-column: 2 / 3;
   grid-row: 2 / 4;
   z-index: 100;
+}
+
+.card-container {
+  display: flex;
+  padding: 1rem;
+  margin: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: snow;
+  flex-wrap: wrap;
+  box-shadow: 0px 8px 20px 0px rgba(245, 236, 236, 0.15);
+}
+
+.card {
+  padding: 1rem;
+  background: #887186;
+
+  display: flex;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 8px 20px 0px rgba(14, 12, 12, 0.15);
+}
+
+.card .card-body {
+  padding: 10px;
+}
+
+.card img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+@media (max-width: 820px) {
+  textarea {
+    width: 10rem;
+    height: 4rem;
+  }
 }

@@ -92,43 +92,11 @@
             <div class="content">
                 <div class="left-side">
                     
-                   <div  class="card-container">
+                   <div  class="card-container" id="postcard">
                         <h1>Arcticles</h1>
-                        <div class="card">
-                            <img src="https://picsum.photos/600/500/?random" alt="Random photo" class="card-img">
-                            <div class="card-body">
-                                <h1>personal branding</h1>
-                                <p>Jan 1 2020</p>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa neque repellat
-                                    voluptas enim aperiam
-                                    itaque veritatis distinctio totam quam quo, voluptatum ipsa maiores eaque quos, rem
-                                    porro, maxime
-                                    minus sequi.</p>
+                      
 
-                                    <a href="../artciles/artciles.html" class="button">
-                                         <button type="button">ReadMore</button>
-                                    </a>
-                               
-                            </div>
-
-                        </div>
-
-                        <div class="card">
-                            <img src="https://picsum.photos/500/500/?random" alt="Random photo" class="card-img">
-                            <div class="card-body">
-                                <h1>personal branding</h1>
-                                <p>Jan 1 2020</p>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa neque repellat
-                                    voluptas enim aperiam
-                                    itaque veritatis distinctio totam quam quo, voluptatum ipsa maiores eaque quos, rem
-                                    porro, maxime
-                                    minus sequi.</p>
-                                <div class="button">
-                                    <input type="button" value="ReadMore">
-                                </div>
-                            </div>
-
-                        </div>
+                        
 
                         <div class="card">
                             <img src="https://picsum.photos/500/200/?random" alt="Random photo" class="card-img">
@@ -150,9 +118,7 @@
 
 
                         </div>
-<div class="btn ">
-    <input type="button" value="ReadMore">
-</div>
+
 
                     </div>
                 </div>
@@ -193,7 +159,7 @@
                     <div class="card-container">
                         <div class="topic-text">Send us a message</div>
                         <p>If you have any work from me or any types of quries related to my tutorial</p>
-                        <form>
+                        <form id="blog">
                             <div>
                                 <input type="text" placeholder=" first name" />
                                 <input type="text" placeholder=" first name" />
@@ -203,7 +169,7 @@
                                 <textarea placeholder="message"></textarea>
                             </div>
                             <div class="btn">
-                                <input type="button" value="Send Now">
+                                <input type="submit" value="Send Now">
                             </div>
                         </form>
                     </div>
@@ -214,6 +180,11 @@
         </div>
 
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="../javascript/blog.js"></script>
 
 </body>
 

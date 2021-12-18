@@ -24,7 +24,7 @@
                 <h2>Form has been validated successfully!</h2>
             </div>
 
-            <form id="myform" name="form" onsubmit="return val()">
+            <form id="mypostform" name="form">
                 <div class="field">
 
 
@@ -40,7 +40,7 @@
                     </div>
                    
                     <div class="input-field">
-                        <label>Arthur:</label>
+                        <label>Authour:</label>
                         <input type="text" id="name" required>
                         
                     </div>
@@ -59,26 +59,28 @@
 
                 <div class="">
                     <div class="upload-image">
-                        <input type='file' class="imgInp" data-id='img1' />
+                        <input type='file' class="imgInp"  id='image'  name="post" required />
+                        <!-- <input type="file " name="files[] " id='image' required> -->
                     </div>
                     <br>
-                    <img id="img1" src="https://i.imgur.com/zAyt4lX.jpg" alt="your image" height="100" />
+                    <!-- <img id="img1" src="https://i.imgur.com/zAyt4lX.jpg" alt="your image" height="100" /> -->
                 
                 </div>
                
                 <div class="">
 
-                    <button type="submit" value="submit" onclick="return val()">post</button>
+                    <button type="submit" value="submit">post</button>
                 </div>
 
             </form>
 
 
         </div>
-        <!-- <div class="container-left">
-            <img src="../Assets/images.png" />
-        </div> -->
+       
     </section>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="./newpost.js"></script>
 
 

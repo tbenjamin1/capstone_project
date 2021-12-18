@@ -1,54 +1,47 @@
-function ImageSetter(input, target) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
+const firebaseConfig = {
+  apiKey: "AIzaSyDYaiHcGG8La-rYH9NI1HlG3s1GscF7Epk",
+  authDomain: "capstone-app-e5b61.firebaseapp.com",
+  projectId: "capstone-app-e5b61",
+  storageBucket: "capstone-app-e5b61.appspot.com",
+  messagingSenderId: "45166716819",
+  appId: "1:45166716819:web:4a345c62e6b33a19fa2a66",
+};
 
-    reader.onload = function (e) {
-      target.attr("src", e.target.result);
-    };
+// Initialize Firebase
 
-    reader.readAsDataURL(input.files[0]);
-  }
-}
+firebase.initializeApp(firebaseConfig);
+const databaseRef = firebase.database().ref("posts");
 
-$(".imgInp").change(function () {
-  var imgDiv = $(this).data("id");
-  imgDiv = $("#" + imgDiv);
-  ImageSetter(this, imgDiv);
-});
+const submitData = (name, title, textarea) => {
+  let newmessageRef = databaseRef.push();
+  newmessageRef
+    .set({
+      name: name,
+      title,
+      textarea,
+    })
+    .then(function () {
+      // show alert
+      console.log("subimit");
+      alert("postcreated");
 
-const val = () => {
+      setTimeout(function () {
+        window.location.reload();
+      }, 3000);
+    })
+    .catch(function (error) {
+      window.alert(error);
+    });
+};
+
+const submitPost = () => {
   let name = document.getElementById("name").value;
   let title = document.getElementById("title").value;
-  let Date = document.getElementById("Date").value;
+
   let textarea = document.getElementById("textarea").value;
-  let error = document.getElementById("error_message");
-  //   let success = document.getElementById("success");
-  let text;
-  error.style.padding = "10px";
 
-  if (name.length < 6) {
-    text = "Name Should be more than 6 characters";
-    error.innerHTML = text;
-    return false;
-  }
-  if (title.length < 6) {
-    text = "Your title is invalid.";
-    error_message.innerHTML = text;
-    return false;
-  }
-  if (textarea.length > 8) {
-    text = "Password Should be more than 8 characters";
-    error.innerHTML = text;
-    return false;
-  }
-
-  let frm = document.getElementById("myform");
-  frm.style.display = "none";
-  let hid = document.getElementById("hid");
-  hid.style.display = "none";
-  let disp = document.getElementById("success");
-  disp.style.display = "block";
-  error.style.padding = "0px";
-  // InsertData();
-  return false;
+  submitData(name, title, textarea);
+  console.log("post");
 };
+
+document.getElementById("mypostform").addEventListener("submit", submitPost);

@@ -1,55 +1,54 @@
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyDYaiHcGG8La-rYH9NI1HlG3s1GscF7Epk",
+  authDomain: "capstone-app-e5b61.firebaseapp.com",
+  projectId: "capstone-app-e5b61",
+  storageBucket: "capstone-app-e5b61.appspot.com",
+  messagingSenderId: "45166716819",
+  appId: "1:45166716819:web:4a345c62e6b33a19fa2a66",
+};
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBNut82SKWz52xsBmuL_aw9NEqRXh0_u1I",
-//   authDomain: "capstoneproject-c7dfc.firebaseapp.com",
-//   projectId: "capstoneproject-c7dfc",
-//   storageBucket: "capstoneproject-c7dfc.appspot.com",
-//   messagingSenderId: "297595733752",
-//   appId: "1:297595733752:web:b729c126309f044e2f5d0d",
-// };
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
 
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// import {
-//   getDatabase,
-//   ref,
-//   set,
-//   child,
-//   update,
-//   remove,
-// } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
+// refernce collections
 
-// const db = getDatabase();
+const auth = firebase.auth();
+const databaseRef = firebase.database().ref("users");
+const submitData = (name, email, pass, cpass) => {
+  app
+    .auth()
+    .createUserWithEmailAndPassword(email, pass)
+    .then(() => {
+      var userdata = {
+        name: name,
+        email: email,
+        pass: pass,
+        cpass: cpass,
+        last_login: Date.now(),
+      };
+      let newUserRef = databaseRef.push();
+      newUserRef
+        .set(userdata)
+        .then(() => {
+          // show alert
+          console.log("subimit");
+          window.location.href = "../pages/login.html";
+        })
+        .catch(function (error) {
+          window.alert(error);
+        });
 
-// references
-// let button = document.getElementById("btn").value;
-let name = document.getElementById("name").value;
-let email = document.getElementById("email").value;
-let pass = document.getElementById("pass").value;
-let cpass = document.getElementById("cpass").value;
-let error = document.getElementById("error_message");
+      alert("user created successfully");
+    })
+    .catch((error) => {
+      var errorcode = error.code;
+      var errormsg = error.message;
+    });
+};
 
-// const InsertData = () => {
-//   set(ref(db, "thevistors/" + email), {
-//     nameOfvistors: name,
-//     emailOfvistors: email,
-//     passOfvistors: pass,
-//     cpassOfvistors: cpass,
-//   })
-//     .then(() => {
-//       alert("data stored succefully");
-//     })
-//     .then((error) => {
-//       alert("unseccessful,error" + error);
-//     });
-// };
+const submitForm = (e) => {
+  e.preventDefault();
 
-// button.addEventListener("click", InsertData);
-
-// validating sgnup
-
-const val = () => {
   let name = document.getElementById("name").value;
   let email = document.getElementById("email").value;
   let pass = document.getElementById("pass").value;
@@ -57,10 +56,6 @@ const val = () => {
   let error = document.getElementById("error_message");
   let text;
   error.style.padding = "10px";
-
-  // auth.createUserWithEmailAndPassword(email, pass).then((userCredentials) => {
-  //   console.log(userCredentials);
-  // });
 
   if (name.length < 6) {
     text = "Name Should be more than 6 characters";
@@ -72,7 +67,7 @@ const val = () => {
     error_message.innerHTML = text;
     return false;
   }
-  if (pass.length < 8) {
+  if (pass.length < 6) {
     text = "Password Should be more than 8 characters";
     error.innerHTML = text;
     return false;
@@ -84,29 +79,13 @@ const val = () => {
   }
   let frm = document.getElementById("myform");
   frm.style.display = "none";
-  let hid = document.getElementById("hid");
-  hid.style.display = "none";
+
   let disp = document.getElementById("success");
   disp.style.display = "block";
   error.style.padding = "0px";
-  // InsertData();
+
+  submitData(name, email, pass, cpass);
   return false;
 };
-// firebase
-// function ImageSetter(input, target) {
-//   if (input.files && input.files[0]) {
-//     var reader = new FileReader();
 
-//     reader.onload = function (e) {
-//       target.attr("src", e.target.result);
-//     };
-
-//     reader.readAsDataURL(input.files[0]);
-//   }
-// }
-
-// $(".imgInp").change(function () {
-//   var imgDiv = $(this).data("id");
-//   imgDiv = $("#" + imgDiv);
-//   ImageSetter(this, imgDiv);
-// });
+document.getElementById("myform").addEventListener("submit", submitForm);

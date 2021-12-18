@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>SignUp|capstone</title>
+
+
+ 
 </head>
 <body>
 
@@ -15,6 +18,8 @@
         <div class="container-left">
             <img src="../Assets/login.jpg"/>
         </div>
+
+
 <div class="container">
     <header>welcome </header>
 <div id="error_message"></div>
@@ -22,24 +27,29 @@
     <h2>Form has been validated successfully!</h2>
 </div>
     
-<form id="myform" name="form" onsubmit="return validate()">
+<form id="loginform" name="form">
+
     <div class="input-field">
         <input type="text" id="email" required>
+
         <label>Email </label>
     </div>
+
 <div class="input-field">
     <input class="pswrd" type="password" id="pass" required>
     <!-- <span class="show">SHOW</span> -->
     <label> Password</label>
-</div>
+   </div>
         <div class="button">
-            <div class="inner"></div>
-            <button type="submit" value="submit" onclick="return validate()">Sin Up</button>
+        <div class="inner"></div>
+        <button type="submit" value="submit" onclick='submitlogin()' >Login</button>
         </div>
     </form>
+
     <div class="auth">
         Or login with
     </div>
+
     <div class="links">
         <div class="facebook">
             <i class="fab fa-facebook-square"><span>Facebook</span></i>
@@ -48,13 +58,17 @@
             <i class="fab fa-google-plus-square"><span>Google</span></i>
         </div>
     </div>
+    
     <div class="signup">
         Not a member? <a href="#">Signup now</a>
     </div>
 </div>
     </section>
 
-    <script src="../javascript/login.js"></script>
     
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="../javascript/login.js"></script>
 </body>
 </html>
